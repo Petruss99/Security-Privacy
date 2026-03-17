@@ -10,7 +10,7 @@ from cryptography.hazmat.backends import default_backend
 
 # --- Configuration ---
 FILE_SIZES = [8, 64, 512, 4096, 32768, 262144, 2097152]
-FILES_DIR = "C:\FI_MUNI\ERASMUS\security_and_privacy"
+FILES_DIR = "."
 KEY_SIZE_BITS = 2048
 # r size: PKCS1v15 allows at most key_size_bytes - 11 = 245 bytes.
 # We use 128 bytes (1024 bits) — more than enough security for a random seed.
@@ -95,6 +95,6 @@ if __name__ == "__main__":
         all_results.append(result)
         print(f"{result['size']:>12} | {result['enc_mean_us']:>14.2f} | {result['enc_std_us']:>13.2f} | {result['dec_mean_us']:>14.2f} | {result['dec_std_us']:>13.2f}")
 
-    with open("C:\FI_MUNI\ERASMUS\security_and_privacy\\rsa_results.json", "w") as f:
+    with open("./rsa_results.json", "w") as f:
         json.dump(all_results, f, indent=2)
     print("\nResults saved to rsa_results.json")

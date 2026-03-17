@@ -4,11 +4,11 @@ import matplotlib.ticker as ticker
 import numpy as np
 
 # --- Load results ---
-with open("results/aes_results.json") as f:
+with open("./aes_results.json") as f:
     aes = json.load(f)
-with open("results/rsa_results.json") as f:
+with open("./rsa_results.json") as f:
     rsa = json.load(f)
-with open("results/sha_results.json") as f:
+with open("./sha_results.json") as f:
     sha = json.load(f)
 
 sizes   = [r["size"] for r in aes]
@@ -75,5 +75,5 @@ make_plot(axes[1, 1], x_ticks, [
 ], "AES Encrypt vs RSA Encrypt")
 
 plt.tight_layout()
-plt.savefig("results/crypto_benchmarks.png", bbox_inches="tight")
-print("Plot saved to results/crypto_benchmarks.png")
+plt.savefig("./crypto_benchmarks.png", bbox_inches="tight")
+print("Plot saved to crypto_benchmarks.png")

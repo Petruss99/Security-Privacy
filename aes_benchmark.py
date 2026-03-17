@@ -8,7 +8,7 @@ from cryptography.hazmat.backends import default_backend
 
 # --- Configuration ---
 FILE_SIZES = [8, 64, 512, 4096, 32768, 262144, 2097152]
-FILES_DIR = "C:\FI_MUNI\ERASMUS\security_and_privacy"
+FILES_DIR = "."
 KEY_SIZE_BITS = 256
 KEY_SIZE_BYTES = KEY_SIZE_BITS // 8
 NONCE_SIZE_BYTES = 16   # AES block size = 128 bits
@@ -78,7 +78,7 @@ if __name__ == "__main__":
         print(f"{result['size']:>12} | {result['enc_mean_us']:>14.2f} | {result['enc_std_us']:>13.2f} | {result['dec_mean_us']:>14.2f} | {result['dec_std_us']:>13.2f}")
 
     # Save results
-    with open('C:\FI_MUNI\ERASMUS\security_and_privacy\\aes_results.json', "w") as f:
+    with open('./aes_results.json', "w") as f:
         json.dump(all_results, f, indent=2)
 
     print("\nResults saved to aes_results.json")

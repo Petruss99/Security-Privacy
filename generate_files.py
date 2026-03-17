@@ -2,7 +2,7 @@ import os
 
 # File sizes in bytes (powers of 8, starting at 8)
 FILE_SIZES = [8, 64, 512, 4096, 32768, 262144, 2097152]
-FILES_DIR = "C:\FI_MUNI\ERASMUS\security_and_privacy"
+FILES_DIR = "."
 
 def generate_files():
     for size in FILE_SIZES:

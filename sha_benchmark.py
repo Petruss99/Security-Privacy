@@ -7,7 +7,7 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
 
 FILE_SIZES = [8, 64, 512, 4096, 32768, 262144, 2097152]
-FILES_DIR = "files"
+FILES_DIR = "."
 REPEATS = 100
 
 def sha256_hash(data: bytes) -> bytes:
@@ -41,6 +41,6 @@ if __name__ == "__main__":
         all_results.append(result)
         print(f"{result['size']:>12} | {result['mean_us']:>12.2f} | {result['std_us']:>11.2f}")
 
-    with open("results/sha_results.json", "w") as f:
+    with open("./sha_results.json", "w") as f:
         json.dump(all_results, f, indent=2)
-    print("\nResults saved to results/sha_results.json")
+    print("\nResults saved to sha_results.json")
