@@ -14,10 +14,12 @@ private_key = rsa.generate_private_key(
 
 public_key = private_key.public_key()
 
-r = os.urandom(32)
-cipher_r = public_key.encrypt(r, padding.PKCS1v15())
+
 
 for file in FILE_SIZES:
+    r = os.urandom(32)
+
+    cipher_r = public_key.encrypt(r, padding.PKCS1v15())
     result = []
     blocks = file // 32
     if file % 32 != 0:
